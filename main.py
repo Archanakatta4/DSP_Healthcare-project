@@ -129,8 +129,6 @@ def trigger_backfill_hashes():
     return redirect(url_for("dashboard"))
 
 
-
-
 @app.route('/edit/<int:record_id>', methods=['GET', 'POST'])
 def edit(record_id):
     if 'username' not in session or session['user_role'] != 'H':  # Ensure only admins can update
@@ -185,8 +183,6 @@ def edit(record_id):
     finally:
         if conn.is_connected():
             conn.close()
-
-
 
 
 @app.route('/delete/<int:record_id>', methods=['POST'])
