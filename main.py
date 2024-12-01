@@ -118,6 +118,8 @@ def add():
 
     return render_template("add.html")
 
+
+
 # Add a route to trigger the backfill process
 @app.route("/backfill_hashes", methods=["GET"])
 def trigger_backfill_hashes():
