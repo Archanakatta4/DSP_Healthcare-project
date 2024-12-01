@@ -98,7 +98,6 @@ def update_records_with_encryption_and_hash():
             conn.close()
 
 
-
 def query_records_with_decryption(user_role):
     """
     Fetch records and decrypt sensitive fields for display.
@@ -182,9 +181,6 @@ def encrypt_existing_records():
     finally:
         if conn.is_connected():
             conn.close()
-
-
-
 
 # Query data with checksum
 def query_data_with_checksum(user_role):
