@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Record</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            width: 300px;
+            margin: auto;
+        }
+        input, textarea, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Record</h1>
+    <form method="POST">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name" value="{{ record['first_name'] }}" required>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name" value="{{ record['last_name'] }}" required>
+
+        <label for="gender">Gender:</label>
+        <input type="number" name="gender" id="gender" value="{{ record['gender'] }}" required>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" value="{{ record['age'] }}" required>
+
+        <label for="weight">Weight:</label>
+        <input type="number" step="0.01" name="weight" id="weight" value="{{ record['weight'] }}" required>
+
+        <label for="height">Height:</label>
+        <input type="number" step="0.01" name="height" id="height" value="{{ record['height'] }}" required>
+
+        <label for="health_history">Health History:</label>
+        <textarea name="health_history" id="health_history" required>{{ record['health_history'] }}</textarea>
+
+        <button type="submit">Update Record</button>
+    </form>
+</body>
+</html>

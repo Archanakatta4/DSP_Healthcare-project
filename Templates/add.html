@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Healthcare Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        input, textarea, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Healthcare Data</h1>
+    <form method="POST" action="{{ url_for('add') }}">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name" required>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name" required>
+
+        <label for="gender">Gender (0 for Male, 1 for Female):</label>
+        <input type="number" name="gender" id="gender" step="1" min="0" max="1" required>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" step="1" required>
+
+        <label for="weight">Weight (in kg, floating point allowed):</label>
+        <input type="number" name="weight" id="weight" step="0.01" required>
+
+        <label for="height">Height (in cm, floating point allowed):</label>
+        <input type="number" name="height" id="height" step="0.01" required>
+
+        <label for="health_history">Health History:</label>
+        <textarea name="health_history" id="health_history" required></textarea>
+
+        <button type="submit">Add Data</button>
+    </form>
+</body>
+</html>
