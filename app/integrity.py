@@ -18,12 +18,14 @@ def verify_row_integrity(row, stored_hash):
     """
     return calculate_row_hash(row) == stored_hash
 
+
 def calculate_query_hash(query_result):
     """
     Calculate a hash for the entire query result to ensure completeness.
     """
     combined_string = "".join([str(row) for row in query_result])
     return hashlib.sha256(combined_string.encode()).hexdigest()
+
 
 def verify_query_integrity(query_result, expected_hash):
     """
@@ -72,4 +74,4 @@ def backfill_hashes():
         print(f"Error during backfill: {e}")
     finally:
         if conn.is_connected():
-            conn.close()
+           conn.close()
