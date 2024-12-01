@@ -179,6 +179,9 @@ def encrypt_existing_records():
         if conn.is_connected():
             conn.close()
 
+
+
+
 # Query data with checksum
 def query_data_with_checksum(user_role):
     try:
@@ -236,6 +239,7 @@ def query_data_with_checksum(user_role):
     finally:
         if conn.is_connected():
             conn.close()
+
 
 
 # Delete a record
