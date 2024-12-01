@@ -42,9 +42,6 @@ def calculate_hash(record):
     return hashlib.sha256(record_string.encode()).hexdigest()
 
 
-
-
-
 def update_records_with_encryption_and_hash():
     """Encrypt sensitive fields and update records with a hash."""
     try:
