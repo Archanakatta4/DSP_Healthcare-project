@@ -9,8 +9,6 @@ from app.authentication import authenticate_user
 from app.integrity import calculate_row_hash, backfill_hashes  # Import backfill_hashes
 from app.data_insertion import encrypt_field
 
-
-
 app = Flask(__name__)
 app.secret_key = "3OtGvowzuC_zvLDJ2HNKCNUZXgE0ddjSW4wbQ7_FtlA="
 
@@ -120,8 +118,6 @@ def add():
 
     return render_template("add.html")
 
-
-
 # Add a route to trigger the backfill process
 @app.route("/backfill_hashes", methods=["GET"])
 def trigger_backfill_hashes():
@@ -186,7 +182,6 @@ def edit(record_id):
         logging.error(f"Error updating record: {e}")
         flash("Error updating record. Please try again.", "danger")
         return redirect(url_for('dashboard'))
-
     finally:
         if conn.is_connected():
             conn.close()
